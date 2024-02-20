@@ -1,0 +1,35 @@
+.todoform {
+    color: white;
+    display: flex;
+    justify-content: center;
+    /*  later if add close button
+    align-items: center; 
+    height: 100vh;  */
+}
+
+.formholder {
+    background-color: #ff941b;
+    width: 20%;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+form label {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0% 20%;
+}
+
+
+
+form button {
+    align-self: flex-end;
+    border-radius: 100%;
+    margin-top: 10px;
+}

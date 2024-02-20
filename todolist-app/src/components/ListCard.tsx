@@ -1,5 +1,6 @@
 import React from 'react';
 import { TodoListType } from '../types/TodoListType';
+import Style from "./ListCard.module.css"
 
 const ListCard: React.FC<{ toDoList: TodoListType[] }> = ({ toDoList }) => {
     console.log(toDoList);
@@ -19,20 +20,23 @@ const ListCard: React.FC<{ toDoList: TodoListType[] }> = ({ toDoList }) => {
         console.log(categorizedItems);
 
         return (
-            <div>
+
+            <div className={Style.row}>
                 {Object.entries(categorizedItems).map(([category, items]) => (
-                    <div key={category}>
+                    <div key={category} className={Style.listCard}>
                         <h1>{category}</h1>
                         {items.map((item, index) => (
-                            <div key={index}>
+                            <div key={item.key} className={Style.element}>
                                 <span>{item.key}</span>
                                 <h3>{item.title}</h3>
                                 <p>{item.description}</p>
+                                <hr/>
                             </div>
                         ))}
                     </div>
                 ))}
             </div>
+
         );
     }
 
