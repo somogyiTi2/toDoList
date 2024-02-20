@@ -6,14 +6,30 @@ import Time from "./Time";
 const Todoform: React.FC<TodoFormProps> = ({ addElement }) => {
     const [title, setTitle] = useState<string>("");
     const [description, setDescription] = useState<string>("");
+    const [category, setCategory] = useState<string>("");
 
     const formHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        addElement({ key: Time().datelong+ Time().todaytime + title, title: title, description: description });
+        addElement(
+            {
+                key: Time().datelong + Time().todaytime + title,
+                category: category,
+                title: title,
+                description: description
+            });
     };
 
     return (
         <form onSubmit={formHandler}>
+            <label htmlFor="category">
+                Tite:
+                <input
+                    type="text"
+                    id="category"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                />
+            </label>
             <label htmlFor="title">
                 Tite:
                 <input
