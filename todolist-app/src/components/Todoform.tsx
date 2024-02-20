@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { TodoFormProps } from '../types/TodoListType'
-import todaytime from "./Time";
+import Time from "./Time";
 
 const Todoform: React.FC<TodoFormProps> = ({ addElement }) => {
     const [title, setTitle] = useState<string>("");
@@ -9,7 +9,7 @@ const Todoform: React.FC<TodoFormProps> = ({ addElement }) => {
 
     const formHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        addElement({ key: todaytime + title, title: title, description: description });
+        addElement({ key: Time().datelong+ Time().todaytime + title, title: title, description: description });
     };
 
     return (
