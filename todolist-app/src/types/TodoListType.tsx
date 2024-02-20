@@ -1,5 +1,5 @@
 export interface TodoListType {
-    key: number;
+    key: string;
     title: string;
     description: string;
 }

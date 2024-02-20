@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import {TodoFormProps} from '../types/TodoListType'
+import { TodoFormProps } from '../types/TodoListType'
+import todaytime from "./Time";
 
 const Todoform: React.FC<TodoFormProps> = ({ addElement }) => {
     const [title, setTitle] = useState<string>("");
@@ -8,8 +9,7 @@ const Todoform: React.FC<TodoFormProps> = ({ addElement }) => {
 
     const formHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(title, description);
-        addElement({ key: Math.random(), title: title, description: description });
+        addElement({ key: todaytime + title, title: title, description: description });
     };
 
     return (

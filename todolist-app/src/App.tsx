@@ -2,9 +2,10 @@
 import { useState } from 'react';
 import Todoform from './components/Todoform';
 import {TodoListType} from './types/TodoListType'
+import Time from './components/Time';
 
 function App() {
-  const [toDoList, setTodoList] = useState<TodoListType[]>([]);
+  const [toDoList, setTodoList] = useState<TodoListType[] | []>([]);
 
   const addElement = (newElement: any): void => {
     setTodoList((prevItems) => {
@@ -13,9 +14,10 @@ function App() {
     console.log(toDoList)
   };
 
-  return (
+  return (<>
+  <Time/>
     <Todoform addElement={addElement} />
-    
+    </>  
   );
 }
 
